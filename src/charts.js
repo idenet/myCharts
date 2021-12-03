@@ -1,5 +1,6 @@
-import { drawAxis, drawPoint } from './broken'
+import { drawAxis, drawBrokenLine, drawDashLine, drawPoint } from './broken'
 import Cirque from './cirque'
+import { drawHistogram } from './histogram'
 import myAnimation from './myAnimation'
 import utils from './utils'
 
@@ -84,8 +85,22 @@ class myCharts {
           render: (current) => {
             // 绘制坐标系
             drawAxis.call(this)
+            // 绘制虚线
+            drawBrokenLine.call(this, current / 200)
+            // 绘制Y轴虚线
+            drawDashLine.call(this, current / 200)
             // 绘制圆形
             drawPoint.call(this, current / 200)
+          },
+        })
+        break
+      case 'histogram':
+        myAnimation.call(this, {
+          percent: 100,
+          render: (current) => {
+            drawAxis.call(this)
+            // 绘制直方图
+            drawHistogram.call(this, current / 100)
           },
         })
         break

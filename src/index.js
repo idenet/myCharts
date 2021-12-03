@@ -42,3 +42,39 @@ new myCharts({
     },
   ],
 })
+
+new myCharts({
+  type: 'histogram',
+  ratio: 1.5,
+  select: '#box3',
+  data: [
+    {
+      xVal: 'vue',
+      yVal: 80,
+    },
+    {
+      xVal: 'react',
+      yVal: 70,
+    },
+    {
+      xVal: 'angular',
+      yVal: 40,
+    },
+    {
+      xVal: 'webpack',
+      yVal: 90,
+    },
+    {
+      xVal: 'nodeJs',
+      yVal: 60,
+    },
+    {
+      xVal: 'typescript',
+      yVal: 40,
+    },
+    {
+      xVal: 'ES6+',
+      yVal: 100,
+    },
+  ],
+})
